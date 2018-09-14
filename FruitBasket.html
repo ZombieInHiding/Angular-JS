@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="ServiceAppOne">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript" src="angular.js"></script>
+<script type="text/javascript" src="services1.js"></script>
+</head>
+<body ng-controller="FruitController">
+<div >
+    <form>
+    <label>Fruit Name</label> 
+        <input type="text" name="name" ng-model="newfruit.name"/>
+
+        <!--<select name="name" ng-model="newfruit.name">
+            <option>Apple</option>drop down and print
+        </select>-->
+         
+        <input type="hidden" ng-model="newfruit.id" />
+     <input type="button" value="Save" ng-click="saveFruit()" />
+    </form>
+    <select ng-model="selectedFruit">
+            <option ng-repeat="fruit in fruits" value="{{fruit.id}}">
+                {{ fruit.name }}
+            </option>
+    </select>   
+        <a href="#" ng-click="deletedata(selectedFruit)">delete</a>
+</div>
+</body>
+</html>
